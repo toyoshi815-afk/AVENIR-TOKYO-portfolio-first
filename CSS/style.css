@@ -908,6 +908,7 @@ font-size: var(--h2-header-font);
   .footer_nav {
   flex-direction:column;
   gap: var(--space-min);
+  padding-bottom: var(--space-min);
   }
 
   .nav_shop,
@@ -921,8 +922,54 @@ font-size: var(--h2-header-font);
   .nav_shop h3,
   .nav_guide h3,
   .nav_about h3 {
-  padding-bottom: 0px;
+  padding-bottom: var(--space-min);
+  position: relative;
+  height: var(--space);
 }
+
+
+  .nav_shop h3::after,
+  .nav_guide h3::after,
+  .nav_about h3::after {
+    content: url("../image/chevron-down.svg");
+    position: absolute;
+    top: 0;
+    right: 16px;
+    transform: rotate(0);
+    transition: transform 0.3s;
+  }
+
+/* アコーディオン　非アクティブ */
+  .nav_shop ul,
+  .nav_guide ul,
+  .nav_about ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, overflow 0.3s;
+    /* padding-bottom: 8px; */
+    padding-top: var(--space-mid);
+  }
+
+  /* アコーディオン　アクティブ */
+
+  .nav_shop h3.is-open::after,
+  .nav_guide h3.is-open::after,
+  .nav_about h3.is-open::after {
+    content: url("../image/chevron-down.svg");
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+    position: absolute;
+    top: 0;
+    right: 16px;
+  }
+
+  .nav_shop ul.is-open,
+  .nav_guide ul.is-open,
+  .nav_about ul.is-open {
+    max-height: 200px;
+    padding-top: var(--space-mid);
+  }
+
   .addres {
     border-top: 1.5px solid var(--line);
     padding-top: var(--space-min);
