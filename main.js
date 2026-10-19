@@ -5,23 +5,17 @@ const hamburger = document.querySelector('.hamburger');
 const closeBtn = document.querySelector('.hamburger_close');
 const hamburgerContents = document.querySelector('.hamburger-contents');
 const overlay = document.querySelector('.overlay');
-console.log(overlay); // null や undefined になっていないか
 
 hamburger.addEventListener('click', () => {
   hamburgerContents.classList.add('active');
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden'; 
-  // searchWindow.classList.remove('active_search');
-  // searchOverlay.classList.remove('active_search');
-  //ハンバーガーと検索ウィンドウを同時に開く方法があれば必要だが、現状見つかっていないので不要
-
 });
 
 closeBtn.addEventListener('click', () => {
   hamburgerContents.classList.remove('active');
   overlay.classList.remove('active');
   document.body.style.overflow = ''; 
-  // ウィンドウを開いている時にメインページのスクロールを無効にする。
 });
 
 overlay.addEventListener('click', () => {
@@ -41,8 +35,6 @@ searchBtn.addEventListener('click', () => {
   searchWindow.classList.add('active_search');
   searchOverlay.classList.add('active_search');
   document.body.style.overflow = 'hidden';
-  // hamburgerContents.classList.remove('active');
-  // overlay.classList.remove('active');
 });
 
 searchClose.addEventListener('click', () => {
