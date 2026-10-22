@@ -56,7 +56,7 @@ searchOverlay.addEventListener('click', () => {
   accordionBtn.forEach((h, index) => {
     h.addEventListener('click', () => {
     h.classList.toggle('is-open');
-    accordionItem.classList.toggle('is-open');
+    accordionItem[index].classList.toggle('is-open');
     });
   });
   
