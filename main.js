@@ -52,7 +52,7 @@ searchOverlay.addEventListener('click', () => {
   /* アコーディオン */
 
   const accordionBtn = document.querySelectorAll('.accordion-head');
-  const accordionItem = document.querySelectorAll('.accordion-itam');
+  const accordionItem = document.querySelectorAll('.accordion-item');
   accordionBtn.forEach((h, index) => {
     h.addEventListener('click', () => {
     h.classList.toggle('is-open');
